@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="homes.scss">
+    <title>WebCampBackendNew</title>
+  </head>
+
 <h1>ここはBooksメインページです</h1>
+
+<h1>Books</h1>
+
+<%= @books.each do |book| %>
+
+  <p>Title</p>
+  <span><%= list.title %></span>
+<% end %>
+
+<h1>New book</h1>
+<!-- form_with部分 -->
+<%= form_with model: @Book do |f| %>
+
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+	
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+	
+  <%= f.submit 'Create Book' %>
+<% end %>
