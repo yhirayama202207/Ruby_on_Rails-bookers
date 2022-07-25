@@ -1,20 +1,22 @@
-<h1>ここはBookers Edit</h1>
-
 <h1>Editing Book</h1>
 
-<%= form_with model: @book, url: update_list_path(@book.id), method: :patch do |f| %>
+<%= form_with model: @book do |f| %>
 
-  <h4>Title</h4>
+  <h2>Title</h2>
   <%= f.text_field :title %>
   
-  <h4>Body</h4>
+  <h2>Body</h2>
   <%= f.text_area :body %>
   
+  <br>
   <%= f.submit 'Update Book' %>
   
-  #リンクを挿入
-  Show | Back
+  <br>
   
-  <%= link_to "編集", edit_list_path(@book.id) %>
+  <%= link_to "Show", "/books/#{@book.id}" %> | <%= link_to "Back", books_path %>
+  
+  <br>
+  <%= link_to "Edit", edit_book_path(@book.id) %>
+  <%= link_to "Delete", book_path(@book.id), method: :delete, "data-confirm" => "Are you sure?" %>
   
 <% end %>

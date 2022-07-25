@@ -8,16 +8,17 @@
   </head>
 
 <body>
-<h1>ここはBookers Index</h1>
-
 
 <h1>Books</h1>
 
 <% @books.each do |book| %>
+  <%= book.title%>
+  <%= book.body%>
+<% end %>
 
-<h1>New book</h1>
+<h2>New book</h2>
 <!-- form_with部分 -->
-<%= form_with model: Book.create do |f| %>
+<%= form_with model: @book do |f| %>
 
 <h4>Title</h4>
 <%= f.text_field :title %>
@@ -27,5 +28,6 @@
 	
 <%= f.submit 'Create Book' %>
 <% end %>
+
 </body>
 </html>
