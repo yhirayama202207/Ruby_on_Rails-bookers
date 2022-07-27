@@ -1,4 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="homes.scss">
+    <title>WebCampBackendNew</title>
+  </head>
+  
+  <body>
+
 <h1>Editing Book</h1>
+
+  <% flash.each do |key, value| %>
+    <p><%= value %></p>
+  <% end %>
 
 <%= form_with model: @book do |f| %>
 
@@ -20,3 +35,6 @@
   <%= link_to "Delete", book_path(@book.id), method: :delete, "data-confirm" => "Are you sure?" %>
   
 <% end %>
+
+  </body>
+</html>
