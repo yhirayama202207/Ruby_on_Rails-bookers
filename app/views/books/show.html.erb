@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-    
+
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="homes.scss">
@@ -8,16 +8,16 @@
   </head>
 
   <body>
-    
+
     <% flash.each do |key, value| %>
     <p><%= value %></p>
     <% end %>
-    
+
     <strong>Title: </strong><%= @book.title %>
     <br>
     <strong>Body: </strong><%= @book.body %>
     <br>
-    <%= link_to "Edit", edit_book_path(@book.id) %> | 
+    <%= link_to "Edit", edit_book_path(@book.id) %> |
     <%= link_to "Back", books_path %>
 
   </body>
